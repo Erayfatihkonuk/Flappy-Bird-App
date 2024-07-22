@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>background.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+background.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">pygame</span><span class="s2">.</span><span class="s1">sprite</span>
+
+<span class="s0">import </span><span class="s1">assets</span>
+<span class="s0">import </span><span class="s1">configs</span>
+<span class="s0">from </span><span class="s1">layer </span><span class="s0">import </span><span class="s1">Layer</span>
+
+
+
+<span class="s0">class </span><span class="s1">Background</span><span class="s2">(</span><span class="s1">pygame</span><span class="s2">.</span><span class="s1">sprite</span><span class="s2">.</span><span class="s1">Sprite</span><span class="s2">):</span>
+    <span class="s0">def </span><span class="s1">__init__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">index</span><span class="s2">, *</span><span class="s1">groups</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">_layer </span><span class="s2">= </span><span class="s1">Layer</span><span class="s2">.</span><span class="s1">BACKGROUND</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">image </span><span class="s2">= </span><span class="s1">assets</span><span class="s2">.</span><span class="s1">get_sprite</span><span class="s2">(</span><span class="s3">&quot;background&quot;</span><span class="s2">)</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">rect </span><span class="s2">= </span><span class="s1">self</span><span class="s2">.</span><span class="s1">image</span><span class="s2">.</span><span class="s1">get_rect</span><span class="s2">(</span><span class="s1">topleft</span><span class="s2">=(</span><span class="s1">configs</span><span class="s2">.</span><span class="s1">SCREEN_WIDTH </span><span class="s2">* </span><span class="s1">index</span><span class="s2">, </span><span class="s4">0</span><span class="s2">))</span>
+
+        <span class="s1">super</span><span class="s2">().</span><span class="s1">__init__</span><span class="s2">(*</span><span class="s1">groups</span><span class="s2">)</span>
+
+    <span class="s0">def </span><span class="s1">update</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">rect</span><span class="s2">.</span><span class="s1">x </span><span class="s2">-= </span><span class="s4">1</span>
+
+        <span class="s0">if </span><span class="s1">self</span><span class="s2">.</span><span class="s1">rect</span><span class="s2">.</span><span class="s1">right </span><span class="s2">&lt;= </span><span class="s4">0</span><span class="s2">:</span>
+            <span class="s1">self</span><span class="s2">.</span><span class="s1">rect</span><span class="s2">.</span><span class="s1">x </span><span class="s2">= </span><span class="s1">configs</span><span class="s2">.</span><span class="s1">SCREEN_WIDTH</span></pre>
+</body>
+</html>
