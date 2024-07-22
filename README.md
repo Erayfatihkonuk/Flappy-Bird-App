@@ -4,6 +4,7 @@ This project is a simple Python implementation of the classic Flappy Bird game. 
 
 
   How to Play
+  
 The gameplay is straightforward:
 
 When the game starts, the bird automatically moves forward.
